@@ -1,0 +1,21 @@
+{
+  "name": "K3s Development Environment",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+"ghcr.io/devcontainers/features/docker-in-docker:1": {}
+  },
+  "forwardPorts": [6443, 80, 443],
+"postCreateCommand": "curl -sfL https://get.k3s.io | sh -",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "redhat.vscode-yaml",
+        "ms-kubernetes-tools.vscode-kubernetes-tools"
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}
